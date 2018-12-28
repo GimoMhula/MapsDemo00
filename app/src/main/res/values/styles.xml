@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
 
+    </style>
+<style name="location_button"
+    parent="AppTheme">
+    <item name="colorAccent">@color/location_button</item>
+</style>
 </resources>

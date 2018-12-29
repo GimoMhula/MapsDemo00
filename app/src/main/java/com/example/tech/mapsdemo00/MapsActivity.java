@@ -192,8 +192,11 @@ public class MapsActivity extends FragmentActivity implements NavigationView.OnN
         getDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MapsActivity.this, "Problema", Toast.LENGTH_SHORT).show();
-                new FetchURL(MapsActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+                myHome();
+
+                Toast.makeText(MapsActivity.this, "Casa", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MapsActivity.this, "Problema", Toast.LENGTH_SHORT).show();
+                //new FetchURL(MapsActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
             }
         });
 
@@ -398,15 +401,32 @@ private void init(){
         }
     }
 
+    public void myHome (){
+        // Add a marker in Maputo and move the camera
+        LatLng mpt = new LatLng(-25.85578649, 32.62132376);
+        mMap.addMarker(new MarkerOptions().position(mpt).title("Gimo Casa"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mpt));
+
+        Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(
+                        new LatLng(-25.97367572, 32.5707829),
+                        new LatLng(-25.97362749, 32.57067561),
+                        new LatLng(-25.97340083, 32.57016599),
+                        new LatLng(-25.9733092, 32.56994605),
+                        new LatLng(-25.97262921, 32.5685753),
+                        new LatLng(-25.97202638, 32.5674355),
+                        new LatLng(-25.97126922, 32.5659281),
+                        new LatLng(-25.97220482, 32.56536484)));
+
+
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         Toast.makeText(this, "Chefe o Mapa Esta Pronto", Toast.LENGTH_LONG).show();
-        // Add a marker in Maputo and move the camera
-//        LatLng mpt = new LatLng(-25.96553, 32.58322);
-//        mMap.addMarker(new MarkerOptions().position(mpt).title("Maputo"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(mpt));
+
 
 
         mMap = googleMap;

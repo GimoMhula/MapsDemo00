@@ -145,7 +145,7 @@
                 android:layout_marginStart="134dp"
                 android:layout_marginLeft="134dp"
                 android:layout_marginBottom="79dp"
-                android:text="Tracar Rota" />
+                android:text="Home" />
 
         </RelativeLayout>
 
